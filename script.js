@@ -40,7 +40,7 @@ function createPassword() {
   };
 
   function getSymbol() {
-    const symbol = "!@#$%^&*(){}[]=<>/,.";
+    const symbol = "!@#$%^&*(){}[]=<>/?+";
     return symbol[Math.floor(Math.random() * symbol.length)]
   };
 
@@ -102,33 +102,23 @@ function createPassword() {
 
 
 
-var passwordArr = [];
+var password = [];
 
 for (i = 0; i < lengthQuestion; i++) {
   var getChoices = choices[Math.floor(Math.random() * choices.length)];
-  passwordArr.push(getChoices);
+  password.push(getChoices);
 }
  
 
-var passwordText = passwordArr.join();
-// writePassword(passwordText);
-console.log(passwordText);
+var passwordText = password.join("");
+    writePassword(passwordText);
+    return passwordText;
+
 
 };
 
-// function writePassword(passwordText){
-//   passwordText = document.querySelector("#password").textContent
-// }
 
+function writePassword(passwordText) {
+    document.getElementById("password").textContent = passwordText;
 
-
-
-// Write password to the #password input
-
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password").textContent
-
-//   passwordText.value = password;
-
-// }
+};
